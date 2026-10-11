@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Dash">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark light">
+  <title>Car Dashboard</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="dash">
+    <section class="map-panel" aria-label="Map">
+      <div id="map-view" class="map-view"></div>
+      <time id="clock" class="clock"></time>
+      <button id="open-settings" class="gear" type="button" aria-label="Settings">⚙︎</button>
+    </section>
+
+    <section class="controls">
+      <section class="section" aria-labelledby="nav-title">
+        <h2 id="nav-title">Navigate</h2>
+        <div id="nav-row" class="row"></div>
+      </section>
+      <section class="section" aria-labelledby="music-title">
+        <h2 id="music-title">Music</h2>
+        <div id="music-row" class="row"></div>
+      </section>
+      <p class="hint">Play/pause/skip: swipe down from the top-right for Control Center, or use your car's controls.</p>
+    </section>
+  </main>
+
+  <div id="wake-tip" class="tip" role="status" hidden>
+    <p>This browser can't keep the screen awake. While driving, set Settings › Display &amp; Brightness › Auto-Lock to Never.</p>
+    <button id="dismiss-tip" class="btn" type="button">OK</button>
+  </div>
+
+  <dialog id="settings" class="sheet">
+    <div id="settings-body" class="sheet-body"></div>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
